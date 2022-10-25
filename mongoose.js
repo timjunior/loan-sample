@@ -4,7 +4,11 @@ const Product = require("./models/products");
 mongoose
   .connect(
     process.env.MONGODB_URL ||
-      "mongodb+srv://tg-lender:GZSCIeHCWGyrmyZE@cluster0.rwg4svv.mongodb.net/my-products"
+      "mongodb+srv://tg-lender:GZSCIeHCWGyrmyZE@cluster0.rwg4svv.mongodb.net/my-products",
+    {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+    }
   )
   .then(() => {
     console.log("Connected to DB!");
