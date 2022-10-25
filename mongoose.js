@@ -3,7 +3,8 @@ const Product = require("./models/products");
 
 mongoose
   .connect(
-    "mongodb+srv://tg-lender:GZSCIeHCWGyrmyZE@cluster0.rwg4svv.mongodb.net/my-products"
+    process.env.MONGODB_URL ||
+      "mongodb+srv://tg-lender:GZSCIeHCWGyrmyZE@cluster0.rwg4svv.mongodb.net/my-products"
   )
   .then(() => {
     console.log("Connected to DB!");
